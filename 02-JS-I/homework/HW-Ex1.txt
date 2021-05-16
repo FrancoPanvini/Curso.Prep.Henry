@@ -1,0 +1,5 @@
+Variables: son elementos creados con un nombre donde puedo guardar el dato que quiera y ese dato puede ir cambiando a lo largo del código
+Strings: son cadenas de caracteres que se escriben entre comillas. Puede incluis cualquier caracter
+Funciones: son líneas de código que escribo agrupadas para luego ser llamadas cuando se necesitan sin tener q repetir todas las líneas de código cada vez. Pueden incluir argumentos que son datos que requiero pasarle a la función al llamarla. Y pueden retornar un valor con la palabra reservada return
+Declaraciones if: dentro de una declaración if puede escribir líneas de código que se ejecuta si se cumple una condición sí estipulada la cual puede ser verdadera o falsa
+Valores booleanos: son tipos de datos lógicos que solo pueden ser o verdadero o falso
