@@ -1,0 +1,5 @@
+for: es un bucle repetitivo q me permite ejecutar líneas de código en base a una variable desde un valor de inicio hasta una condición de parada
+Operadores lógicos: para operar con las variables de tipo boolean existen 3 operadores que me permiten trabajar con ellos.
+        And: me devuelve verdadero si ambas variables son verdaderas
+        Or: me devuelve verdadero si alguna de las 2 variables es verdaderas
+        Not: me devuelve el valor opuesto, falso si era verdadero y verdadero si era falso
