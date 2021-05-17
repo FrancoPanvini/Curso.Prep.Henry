@@ -1,0 +1,2 @@
+array: es un tipo de datos que me permite guardar muchos elementos distintos como si fuesen una lista ordenada de cosas
+tienen un nombre y un índice para acceder a cada posición. Pueden archivar todo tipo de datos nativos incluso funciones u otros arrays
