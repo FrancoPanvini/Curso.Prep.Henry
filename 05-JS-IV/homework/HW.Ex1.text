@@ -1,0 +1,6 @@
+Objeto: es una colección de propiedades que permite representar una estructura de datos. Se define entre {} y cada propiedad tiene un nombre que la identifica y un valor que toma en el Objeto
+Propiedades: son los items que identifican un objeto. Tienen un nombre propio y pueden tomar cualquier valor
+Métodos: dentro de un objeto una propiedad puede ser una función, en estos casos se conocen como Métodos
+Bucle for...in: este bucle me permite recorrer un objeto pasando por cada propiedad
+La dot notation (Obj.Prop) es más practica para escribir pero no me permite que lo que venga después del punto sea una variable
+La bracket notation (obj['Prop']) es similar a los arrays y menos práctica pero puedo reemplazar 'Prop' por una variable con un valor string
