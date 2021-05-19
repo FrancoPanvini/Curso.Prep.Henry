@@ -1,0 +1,2 @@
+prototype: definir un prototipo me permite definir un montón de propiedaddes o métodos q son asiganables a una clase de objetos en un único lugar para avitar repetirme
+constructor: es una función q me permite crear una instancia (un objeto) perteneciente a una clase
