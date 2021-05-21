@@ -1,0 +1,1 @@
+Funciones callback hace referencia a las funciones que son pasadas como argumentos en otras funciones. En js yo puedo pasarle una función como arg a otra y ejecutarla dentro del código de la otra
