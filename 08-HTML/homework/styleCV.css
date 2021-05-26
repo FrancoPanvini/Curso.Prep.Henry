@@ -1,0 +1,49 @@
+body{
+    background-color:white;
+    font-family:Calibri;
+    font-style: oblique;
+}
+#datosGenerales{
+    float:left;
+    background-color:darkgrey;
+    width:300px;
+    height:auto;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.main{
+    margin-left:350px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:20px;
+    padding-right:20px;
+}
+h1{
+    font-family:inherit;
+    font-style: inherit;
+    font-size: 40px;
+    text-align:left;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+h2{
+    color:black;
+    font-family:inherit;
+    font-style: inherit;
+    font-size:20px;
+    text-align:left;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+hr{
+    margin:0px;
+    padding:0px;
+
+}
+.tipoCat{
+    font-family:inherit;
+    font-style: inherit;
+    font-weight:bold    
+}
