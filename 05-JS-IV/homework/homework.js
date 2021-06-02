@@ -9,7 +9,11 @@ function crearGato(nombre, edad) {
   function meow(){
     return 'Meow!';
   }
-  var obj={nombre:nombre,edad:edad,meow}
+  var obj={
+    nombre:nombre,
+    edad:edad,
+    meow
+  }
   return obj;
 }
 
@@ -19,9 +23,8 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto[property]=null;
+  objeto[property]=null;   //objeto.property es literal busca una propiedad de o¿nombre 'property' y en este caso es una variable 
   return objeto;
-
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -37,7 +40,8 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
   return objetoMisterioso.numeroMisterioso * 5;
-
+  // es lo mismo que:
+  // return objetoMisterioso['numeroMisterioso'] * 5;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -54,6 +58,8 @@ function nuevoUsuario(nombre, email, password) {
   // Devuelve el objeto
   // Tu código:
   var nuevoObjeto={nombre:nombre,email:email,password:password};
+  // se puede simplificar ya que coinciden los nombres pero es más claro de la forma anterior
+  // var nuevoObjeto={nombre,email,password}
   return nuevoObjeto;
 }
 
@@ -61,7 +67,7 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if (usuario.email!=undefined&&usuario.email!=null){
+  if (usuario.email!=undefined){          // también funciona if (usuario.email) como true si lo tiene
     return true;
   }
   return false;
@@ -73,10 +79,14 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (objeto[propiedad]==undefined){
-    return false;
+  if (objeto[propiedad]!==undefined){        //funciona igual if (objeto[propiedad])
+    return true;
   }
-  return true;
+  return false;
+
+  // otra solución
+  // return objeto.hasOwnProperty(propiedad);
+
 }
 
 function verificarPassword(usuario, password) {
@@ -116,6 +126,10 @@ function pasarUsuarioAPremium(usuarios) {
   for (var i=0;i<usuarios.length;i++){
     usuarios[i].esPremium=true;
   }
+
+  //otra solución
+  // usuarios.forEach(function(i){i.esPremium=true})
+
   return usuarios;
 }
 
@@ -130,8 +144,13 @@ function sumarLikesDeUsuario(usuario) {
   for(var i=0;i<usuario.posts.length;i++){
     suma=suma + usuario.posts[i].likes;
   }
+
+  //otra solución
+  // var suma = usuario.posts.reduce(function(x,i){return x + i.likes},0)
+
   return suma;
 }
+
 function agregarMetodoCalculoDescuento(producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
   // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento

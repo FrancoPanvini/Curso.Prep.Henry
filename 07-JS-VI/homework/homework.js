@@ -4,8 +4,10 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  var rta=nombre[0].toUpperCase()+nombre.substring(1,nombre.length).toLowerCase();
-  return rta;
+  return nombre[0].toUpperCase()+nombre.substring(1,nombre.length).toLowerCase();
+  // otra solución
+  // return nombre[0].toUpperCase()+nombre.slice(1);
+  
 }
 
 function invocarCallback(cb) {
@@ -35,6 +37,11 @@ function forEach(array, cb) {
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
   array.forEach(cb);
+  
+  //otra solución con for
+  // for (i=0;i<array.length;i++) {
+  //   cb(array[i]);
+  // }
 }
 
 function map(array, cb) {
@@ -44,15 +51,39 @@ function map(array, cb) {
   //Tu código:
   var rta = array.map(cb);
   return rta;
+
+  //otra solución con for
+  // var rta=[];
+  // for (i=0;i<array.length;i++) {
+  //   rta.push(cb(array[i]));
+  // }
+  // return rta
 }
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  var rta=[];
-  array.forEach(function(i){if(i[0]=='a'){rta.push(i);}});
+  // var rta=[];
+  // array.forEach(function(i){if(i[0]==='a'){rta.push(i);}});    //forEach con if es lo mismo que usar .filter
+  // return rta;
+
+  //solución con .filter
+  var rta=array.filter(function(i){
+    if(i[0]==='a'){
+      return i
+    }
+  })
   return rta;
+
+  //solución con for
+  // var rta=[]
+  // for(i=0;i<array.length;i++) {
+  //   if (array[i][0]==='a') {
+  //     rta.push(array[i]);
+  //   }
+  // }
+  // return rta;
 }
 
 // No modificar nada debajo de esta línea

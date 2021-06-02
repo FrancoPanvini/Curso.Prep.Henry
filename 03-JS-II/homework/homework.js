@@ -68,16 +68,12 @@ function colors(color) {
   switch (color){
     case 'blue':
       return 'This is blue';
-      break;
     case 'red':
       return 'This is red';
-      break;
     case 'green':
       return 'This is green';
-       break;
     case 'orange':
       return 'This is orange';
-      break;
     default:
       return 'Color not found';
   }
@@ -90,21 +86,24 @@ function esDiezOCinco(numero) {
   switch (numero){
     case 5:
      return true;
-     break;
     case 10:
      return true;
-     break;
     default:
       return false;
   }
 }
+  // Otra solución
+  // if (numero===10 || numero===5){
+  //   return true;
+  // }
+  // return false;
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
   var rta=false;
-  if (numero<50&&numero>20){
+  if (numero<50 && numero>20){
     rta=true;
   }
   return rta;
@@ -125,16 +124,22 @@ function esEntero(numero) {
   return rta;
 }
 
+  // otra solución
+  // if (numero - Math.floor(numero)===0){
+  //   return true;
+  // }
+  // return false;
+
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero%3==0&&!(numero%5==0)){
+  if (numero%3===0 && !(numero%5===0)){
     return 'fizz';
-  } else if (!(numero%3==0)&&numero%5==0) {
+  } else if (!(numero%3===0) && numero%5===0) {
     return 'buzz';
-  } else if (numero%3==0&&numero%5==0){
+  } else if (numero%3===0 && numero%5===0){
     return 'fizzbuzz';
   }
   return numero;
@@ -147,14 +152,14 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
-  if (num1<0||num2<0||num3<0){
+  if (num1<0 || num2<0 || num3<0){
     return 'Hay negativos';
-  }else if (num1===0||num2===0||num3===0) {
+  }else if (num1===0 || num2===0 || num3===0) {
     return 'Error';
-  }else if (num1>num2&&num1>num3){
+  }else if (num1>num2 && num1>num3){
     return 'Número 1 es mayor y positivo';
-  } else if(num3>num1&&num3>num2){
-    return num3+1;
+  } else if(num3>num1 && num3>num2){
+    return num3 + 1;
   } else{
     return false;
   }
@@ -166,11 +171,11 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-  if(numero==1||numero==0){
+  if(numero===1 || numero===0){
     return false;
   }
-  for (var i=2;i<numero;i++){
-    if(numero%i===0){
+  for (var i=2 ; i<numero ; i++) {
+    if(numero%i===0) {
       return false;
     }
   }
@@ -192,9 +197,10 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí 
-  var rta=[]
-  for(var i=0;i<=10;i++){
-    rta[i]=6*i;
+  var rta = [];
+  for(var i=0 ; i<=10 ; i++) {
+    rta[i] = 6*i;
+    // rta.push(6*i);   otra manera
   }
   return rta;
 }
@@ -202,11 +208,19 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  if(numero>99 && numero<1000){
+  if((numero>99 && numero<1000) || (numero<-99 && numero>-1000)){
     return true;
   }
   return false;
 }
+
+  // otra solución
+  // var aux = numero +'';      transforma el numero en string , tmb se puede poner aux = numero.toString()
+  // if (aux.length===3) {      no contempla los negativos porque tendría 4 porque el - es un caracter más
+  //   return true;
+  // }
+  // return false;
+
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces

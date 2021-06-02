@@ -65,30 +65,45 @@ function dePalabrasAFrase(palabras) {
   return rta;
 }
 
+  // otra solución
+  // return palabras.join(' ');
+
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+
   for (var i=0;i<array.length;i++){
     if (array[i]==elemento){
       return true;
     }
   }
   return false;
+
+  // otra solución
+  // return array.includes(elemento);
 }
+
+  
 
 
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+
   var rta=0;
   while(numeros.length>0){
     rta=rta+numeros.pop();
   }
   return rta;
+
+  // otra solución
+  // return numeros.reduce(function (x,i){return x+i},0);
 }
+
+
 
 
 function promedioResultadosTest(resultadosTest) {
@@ -100,6 +115,9 @@ function promedioResultadosTest(resultadosTest) {
     suma=suma+resultadosTest[i];
   }
   return suma/resultadosTest.length;
+
+  // otra solución
+  // return resultadosTest.reduce(function (x,i){return x+i},0)/resultadosTest.length;
 }
 
 
@@ -112,6 +130,9 @@ function numeroMasGrande(numeros) {
     max=Math.max(max,numeros[i]);
   }
   return max;
+
+  // otra solución
+  // return Math.max.apply(null,numeros);
 }
 
 
@@ -130,12 +151,18 @@ function multiplicarArgumentos() {
     rta=rta*arguments[i];
   }
   return rta;
+
+  // otra solución
+  // return Object.values(arguments).reduce(function(x,i){return x*i},1);
+  // arguments es un Object, lo transformo primero en un array para poder aplicarle .reduce
+  // para transformarlo a array le aplico object.values q me da un array de los valores
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+
   var rta=0;
   for (var i=0;i<arreglo.length;i++){
     if(arreglo[i]>18){
@@ -143,6 +170,12 @@ function cuentoElementos(arreglo){
     }
   }
   return rta;
+
+  // otra solución
+  // return arreglo.reduce(function(x,i){
+  //   if(i>18){return x+1}
+  //   return x
+  //   },0)
 }
 
 
@@ -151,7 +184,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  if(numeroDeDia==1||numeroDeDia==7){
+  if(numeroDeDia==1 || numeroDeDia==7){
     return 'Es fin de semana';
   } else{
     return 'Es dia Laboral';
@@ -163,7 +196,7 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if (n.toString()[0]==9){
+  if (n.toString()[0]==='9'){
     return true;
   }
   return false;
@@ -188,13 +221,24 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+
   var rta=[];
   for(var i=0;i<array.length;i++){
     if(array[i]==='Enero'||array[i]==='Marzo'||array[i]==='Noviembre'){
       rta.push(array[i]);
     }
   }
-  if (rta.length==3){
+
+  // otra solución para obtener rta. Tener en cuenta q no se puede usar .map porque me devuelve un array
+  // del mismo length que el original con valores undefined donde no cumple la condición, en cambio .filter
+  // no me hace nada cuando no se cumple esa condición
+  // var rta = array.filter(function(i){
+  //   if (i=='Enero'||i==='Marzo'||i==='Noviembre'){
+  //     return i
+  //   }
+  // })
+
+  if (rta.length===3){
     return rta;
   }
   return 'No se encontraron los meses pedidos';
@@ -205,6 +249,7 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  
   var rta=[];
   for(var i=0;i<array.length;i++){
     if(array[i]>100){
@@ -212,6 +257,9 @@ function mayorACien(array) {
     }
   }
   return rta;
+
+  // otra solución con el método .filter
+  // return array.filter(function(i){if(i>100){return i}})
 }
 
 
@@ -224,7 +272,7 @@ function breakStatement(numero) {
   //Pista: usá el statement 'break'
   // Tu código:
   var rta=[];
-  for(var i=0;i<10;i++){
+  for(var i=0 ; i<10 ; i++) {
     numero=numero+2;
     rta.push(numero);
     if (numero==i){

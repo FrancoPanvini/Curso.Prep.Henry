@@ -4,17 +4,26 @@ function deObjetoAmatriz(objeto){
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
   // un par clave-valor en forma de matriz.
   //Ejemplo: 
-  /*objeto({
+  /*objeto={
       D: 1,
       B: 2,
       C: 3
-    }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
+    } ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
   var matriz=[];
-  for(let i in objeto){
+  for(i in objeto){
     matriz.push([i,objeto[i]]);
   }
   return matriz;
+
+  //otra solución con Object.keys
+  // var matriz=[];
+  // var key = Object.keys(objeto);
+  // for (i=0;i<key.length;i++) {
+  //   matriz.push([key[i],objeto[key[i]]]);
+  // }
+  // return matriz;
+
 }
 
 
@@ -37,6 +46,16 @@ function numberOfCharacters(string) {
     }
   })
   return rta;
+
+  //otra solución más directa y sencilla recorriendo el string con for 
+  // var rta = {};
+  // for (i=0;i<string.length;i++) {
+  //   if (!rta[string[i]]) {      //si no existe lo inicializo porq si no desp trata de sumar undefined + 1 y ese NaN
+  //     rta[string[i]]=0
+  //   }
+  //   rta[string[i]] = rta[string[i]] + 1;  
+  // } 
+  // return rta;
 }
 
 
@@ -56,6 +75,18 @@ function capToFront(s) {
     if (abc.includes(i)){rta.push(i)}
   })
   return rta.join('');
+
+  //otra solución con for
+  //   var rtaMay='';
+  //   var rtaMin='';
+  //   for (i=0;i<s.length;i++) {
+  //     if (s[i].toUpperCase()===s[i]) {
+  //       rtaMay= rtaMay + s[i];
+  //     } else {
+  //       rtaMin= rtaMin + s[i];
+  //     }
+  //   }
+  //   return rtaMay + rtaMin;
 }
 
 
@@ -67,7 +98,13 @@ function asAmirror(str) {
   //Escribe tu código aquí
   var array = str.split(' ');
   var rta=[];
-  array.forEach(function(i){rta.push(i.split('').reverse().join(''))});
+  
+  // solución con .forEach
+  // array.forEach(function(i){rta.push(i.split('').reverse().join(''))});
+  // return rta.join(' ');
+
+  //solución con .map
+  rta=array.map(function(i){return i.split('').reverse().join('')});
   return rta.join(' ');
 } 
 
@@ -84,6 +121,14 @@ function capicua(numero){
     }
   }
   return 'Es capicua';
+
+  //otra solución usando strings y la función anterior
+  // numero = numero.toString();
+  // if (asAmirror(numero)===numero) {
+  //   return 'Es capicua';
+  // } else { 
+  //   return 'No es capicua';
+  // }
 }
 
 
@@ -100,6 +145,15 @@ function deleteAbc(cadena){
     }
   })
   return rta.join('');
+
+  //otra solución con for
+  // var rta = '';
+  // for (i=0 ; i<cadena.length ; i++) {
+  //   if (cadena[i]!=='a' && cadena[i]!=='b' && cadena[i]!=='c') {
+  //     rta = rta + cadena[i];
+  //   }
+  // }
+  // return rta;
 }
 
 
@@ -111,6 +165,27 @@ function sortArray(arr) {
     return a.length - b.length;
   })
   return rta;
+
+  //solución con for
+  // var rta=[arr[0]];
+  // var rtaIzq;
+  // var rtaDer;
+
+  // for (i=1 ; i<arr.length ; i++) {
+  //   for (j=0 ; j<rta.length ; j++) {
+  //     if (rta[j].length>arr[i].length) {
+  //       rtaIzq = rta.slice(0,j);
+  //       rtaDer = rta.slice(j);
+  //       rta = rtaIzq.concat(arr[i]).concat(rtaDer);
+  //       break;
+  //     }
+  //     if (j===rta.length-1) {
+  //       rta.push(arr[i]);
+  //       break;
+  //     }
+  //   }
+  // }
+  // return rta;
 }
 
 
@@ -126,7 +201,19 @@ function buscoInterseccion(arreglo1, arreglo2){
       rta.push(i);
     }
   })
-  return rta;  
+  return rta;
+  
+  //solución con for
+  // var rta = [];
+  // for (i=0 ; i<arreglo1.length ; i++) {
+  //   for (j=0 ; j<arreglo2.length ; j++) {
+  //     if (arreglo2[j]===arreglo1[i]) { 
+  //       rta.push(arreglo2[j]);
+  //       break;
+  //     }
+  //   }
+  // }
+  // return rta;
 }
 
 
